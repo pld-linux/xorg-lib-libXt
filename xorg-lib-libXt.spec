@@ -17,6 +17,7 @@ BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	xorg-util-util-macros
+Obsoletes:	libXt
 BuildRoot:	%{tmpdir}/libXt-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -36,6 +37,7 @@ Group:		X11/Development/Libraries
 Requires:	xorg-lib-libXt = %{version}-%{release}
 Requires:	xorg-lib-libSM-devel
 Requires:	xorg-lib-libX11-devel
+Obsoletes:	libXt-devel
 
 %description devel
 X Toolkit library.
@@ -55,6 +57,7 @@ Summary:	Static libXt libraries
 Summary(pl):	Biblioteki statyczne libXt
 Group:		Development/Libraries
 Requires:	xorg-lib-libXt-devel = %{version}-%{release}
+Obsoletes:	libXt-static
 
 %description static
 X Toolkit library.
