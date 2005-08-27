@@ -1,5 +1,3 @@
-
-#
 Summary:	X Toolkit library
 Summary(pl):	Biblioteka X Toolkit
 Name:		xorg-lib-libXt
@@ -12,13 +10,13 @@ Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXt-%{version}.tar.bz2
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	xorg-lib-libSM-devel
-BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
+BuildRequires:	xorg-lib-libSM-devel
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	libXt
-BuildRoot:	%{tmpdir}/libXt-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -29,12 +27,11 @@ X Toolkit library.
 %description -l pl
 Biblioteka X Toolkit.
 
-
 %package devel
 Summary:	Header files libXt development
 Summary(pl):	Pliki nag³ówkowe do biblioteki libXt
 Group:		X11/Development/Libraries
-Requires:	xorg-lib-libXt = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libSM-devel
 Requires:	xorg-lib-libX11-devel
 Obsoletes:	libXt-devel
@@ -51,12 +48,11 @@ Biblioteka X Toolkit.
 Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
 u¿ywaj±cych biblioteki libXt.
 
-
 %package static
-Summary:	Static libXt libraries
-Summary(pl):	Biblioteki statyczne libXt
-Group:		Development/Libraries
-Requires:	xorg-lib-libXt-devel = %{version}-%{release}
+Summary:	Static libXt library
+Summary(pl):	Biblioteka statyczna libXt
+Group:		X11/Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXt-static
 
 %description static
@@ -69,10 +65,8 @@ Biblioteka X Toolkit.
 
 Pakiet zawiera statyczn± bibliotekê libXt.
 
-
 %prep
 %setup -q -n libXt-%{version}
-
 
 %build
 %{__libtoolize}
@@ -96,21 +90,18 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog
-%attr(755,root,wheel) %{_libdir}/libXt.so.*
-
+%attr(755,root,root) %{_libdir}/libXt.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/X11/*.h
+%attr(755,root,root) %{_libdir}/libXt.so
 %{_libdir}/libXt.la
-%attr(755,root,wheel) %{_libdir}/libXt.so
+%{_includedir}/X11/*.h
 %{_pkgconfigdir}/xt.pc
 %{_mandir}/man3/*.3*
-
 
 %files static
 %defattr(644,root,root,755)
