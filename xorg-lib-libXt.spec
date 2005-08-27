@@ -15,7 +15,7 @@ BuildRequires:	automake
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	libtool
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	libXt
 BuildRoot:	%{tmpdir}/libXt-%{version}-root-%(id -u -n)
