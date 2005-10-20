@@ -15,7 +15,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-util-util-macros >= 0.99.1
 Obsoletes:	libXt
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
