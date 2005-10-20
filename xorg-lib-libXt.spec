@@ -1,15 +1,16 @@
 Summary:	X Toolkit library
 Summary(pl):	Biblioteka X Toolkit
 Name:		xorg-lib-libXt
-Version:	0.99.0
-Release:	0.03
+Version:	0.99.1
+Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXt-%{version}.tar.bz2
-# Source0-md5:	239c48ef101c5daacba044e603af441a
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/lib/libXt-%{version}.tar.bz2
+# Source0-md5:	c70360ab5ffba0651c24fc3e4fe84f93
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
+BuildRequires:	cpp
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libSM-devel
@@ -79,6 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
+	libmandir=%{_mandir}/man3 \
 	pkgconfigdir=%{_pkgconfigdir}
 
 %clean
@@ -89,7 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog
+%doc COPYING ChangeLog
 %attr(755,root,root) %{_libdir}/libXt.so.*.*.*
 
 %files devel
@@ -98,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libXt.la
 %{_includedir}/X11/*.h
 %{_pkgconfigdir}/xt.pc
-%{_mandir}/man3/*.3*
+%{_mandir}/man3/*.3x*
 
 %files static
 %defattr(644,root,root,755)
