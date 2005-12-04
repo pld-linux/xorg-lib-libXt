@@ -26,8 +26,8 @@ X Toolkit library.
 Biblioteka X Toolkit.
 
 %package devel
-Summary:	Header files libXt development
-Summary(pl):	Pliki nag³ówkowe do biblioteki libXt
+Summary:	Header files for libXt library
+Summary(pl):	Pliki nag³ówkowe biblioteki libXt
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libSM-devel
@@ -38,7 +38,7 @@ Obsoletes:	libXt-devel
 X Toolkit library.
 
 This package contains the header files needed to develop programs that
-use these libXt.
+use libXt.
 
 %description devel -l pl
 Biblioteka X Toolkit.
