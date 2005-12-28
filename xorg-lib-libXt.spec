@@ -5,8 +5,8 @@ Version:	1.0.0
 Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC4/lib/libXt-%{version}.tar.bz2
-# Source0-md5:	8b56ba99c4e4105bb31b695940baece4
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/lib/libXt-%{version}.tar.bz2
+# Source0-md5:	ac88ae86bcfae3b062a84e9d26c3effc
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
