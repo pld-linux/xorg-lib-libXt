@@ -82,6 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
+install -d $RPM_BUILD_ROOT%{_datadir}/X11/app-defaults
+install -d $RPM_BUILD_ROOT%{_datadir}/X11/pl/app-defaults
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -92,6 +95,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog
 %attr(755,root,root) %{_libdir}/libXt.so.*.*.*
+%dir %{_datadir}/X11/app-defaults
+%lang(pl) %dir %{_datadir}/X11/pl
+%lang(pl) %dir %{_datadir}/X11/pl/app-defaults
 
 %files devel
 %defattr(644,root,root,755)
