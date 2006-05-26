@@ -83,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 	pkgconfigdir=%{_pkgconfigdir}
 
 install -d $RPM_BUILD_ROOT%{_datadir}/X11/app-defaults
-install -d $RPM_BUILD_ROOT%{_datadir}/X11/pl/app-defaults
+install -d $RPM_BUILD_ROOT%{_datadir}/X11/{cs,da,de,es,fr,ja,ko,nl,pl,pt,pt_BR,ru,sv,zh_CN,zh_TW}/app-defaults
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,8 +96,21 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING ChangeLog
 %attr(755,root,root) %{_libdir}/libXt.so.*.*.*
 %dir %{_datadir}/X11/app-defaults
-%lang(pl) %dir %{_datadir}/X11/pl
-%lang(pl) %dir %{_datadir}/X11/pl/app-defaults
+%lang(cs) %{_datadir}/X11/cs
+%lang(da) %{_datadir}/X11/da
+%lang(de) %{_datadir}/X11/de
+%lang(es) %{_datadir}/X11/es
+%lang(fr) %{_datadir}/X11/fr
+%lang(ja) %{_datadir}/X11/ja
+%lang(ko) %{_datadir}/X11/ko
+%lang(nl) %{_datadir}/X11/nl
+%lang(pl) %{_datadir}/X11/pl
+%lang(pt) %{_datadir}/X11/pt
+%lang(pt_BR) %{_datadir}/X11/pt_BR
+%lang(ru) %{_datadir}/X11/ru
+%lang(sv) %{_datadir}/X11/sv
+%lang(zh_CN) %{_datadir}/X11/zh_CN
+%lang(zh_TW) %{_datadir}/X11/zh_TW
 
 %files devel
 %defattr(644,root,root,755)
