@@ -83,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 	pkgconfigdir=%{_pkgconfigdir}
 
 install -d $RPM_BUILD_ROOT%{_datadir}/X11/app-defaults
-install -d $RPM_BUILD_ROOT%{_datadir}/X11/{cs,da,de,es,fr,ja,ko,nl,pl,pt,pt_BR,ru,sv,zh_CN,zh_TW}/app-defaults
+install -d $RPM_BUILD_ROOT%{_datadir}/X11/{cs,da,de,es,fr,it,ja,ko,nl,pl,pt,pt_BR,ru,sv,zh_CN,zh_TW}/app-defaults
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -101,6 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_datadir}/X11/de
 %lang(es) %{_datadir}/X11/es
 %lang(fr) %{_datadir}/X11/fr
+%lang(it) %{_datadir}/X11/it
 %lang(ja) %{_datadir}/X11/ja
 %lang(ko) %{_datadir}/X11/ko
 %lang(nl) %{_datadir}/X11/nl
