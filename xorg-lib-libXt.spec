@@ -83,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 	pkgconfigdir=%{_pkgconfigdir}
 
 install -d $RPM_BUILD_ROOT%{_datadir}/X11/app-defaults
-install -d $RPM_BUILD_ROOT%{_datadir}/X11/{cs,da,de,es,fr,it,ja,ko,nl,pl,pt,pt_BR,ru,sv,zh_CN,zh_TW}/app-defaults
+install -d $RPM_BUILD_ROOT%{_datadir}/X11/{cs,da,de,es,es_AR,eu,fr,hu,it,ja,ko,mg,nb,nl,oc,pl,pt,pt_BR,ru,sk,sv,zh_CN,zh_TW}/app-defaults
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -100,15 +100,22 @@ rm -rf $RPM_BUILD_ROOT
 %lang(da) %{_datadir}/X11/da
 %lang(de) %{_datadir}/X11/de
 %lang(es) %{_datadir}/X11/es
+%lang(es_AR) %{_datadir}/X11/es_AR
+%lang(eu) %{_datadir}/X11/eu
 %lang(fr) %{_datadir}/X11/fr
+%lang(hu) %{_datadir}/X11/hu
 %lang(it) %{_datadir}/X11/it
 %lang(ja) %{_datadir}/X11/ja
 %lang(ko) %{_datadir}/X11/ko
+%lang(mg) %{_datadir}/X11/mg
+%lang(nb) %{_datadir}/X11/nb
 %lang(nl) %{_datadir}/X11/nl
+%lang(oc) %{_datadir}/X11/oc
 %lang(pl) %{_datadir}/X11/pl
 %lang(pt) %{_datadir}/X11/pt
 %lang(pt_BR) %{_datadir}/X11/pt_BR
 %lang(ru) %{_datadir}/X11/ru
+%lang(sk) %{_datadir}/X11/sk
 %lang(sv) %{_datadir}/X11/sv
 %lang(zh_CN) %{_datadir}/X11/zh_CN
 %lang(zh_TW) %{_datadir}/X11/zh_TW
