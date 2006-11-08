@@ -1,12 +1,12 @@
 Summary:	X Toolkit library
 Summary(pl):	Biblioteka X Toolkit
 Name:		xorg-lib-libXt
-Version:	1.0.3
+Version:	1.0.4
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXt-%{version}.tar.bz2
-# Source0-md5:	1ba2e98735e762344781a7a41f4c9d10
+# Source0-md5:	937735f342c046db239852fec0413f6c
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
