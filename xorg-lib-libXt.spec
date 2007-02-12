@@ -1,5 +1,5 @@
 Summary:	X Toolkit library
-Summary(pl):	Biblioteka X Toolkit
+Summary(pl.UTF-8):   Biblioteka X Toolkit
 Name:		xorg-lib-libXt
 Version:	1.0.5
 Release:	1
@@ -22,12 +22,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 X Toolkit library.
 
-%description -l pl
+%description -l pl.UTF-8
 Biblioteka X Toolkit.
 
 %package devel
 Summary:	Header files for libXt library
-Summary(pl):	Pliki nag³ówkowe biblioteki libXt
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libXt
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libSM-devel
@@ -40,15 +40,15 @@ X Toolkit library.
 This package contains the header files needed to develop programs that
 use libXt.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Biblioteka X Toolkit.
 
-Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
-u¿ywaj±cych biblioteki libXt.
+Pakiet zawiera pliki nagÅ‚Ã³wkowe niezbÄ™dne do kompilowania programÃ³w
+uÅ¼ywajÄ…cych biblioteki libXt.
 
 %package static
 Summary:	Static libXt library
-Summary(pl):	Biblioteka statyczna libXt
+Summary(pl.UTF-8):   Biblioteka statyczna libXt
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXt-static
@@ -58,10 +58,10 @@ X Toolkit library.
 
 This package contains the static libXt library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka X Toolkit.
 
-Pakiet zawiera statyczn± bibliotekê libXt.
+Pakiet zawiera statycznÄ… bibliotekÄ™ libXt.
 
 %prep
 %setup -q -n libXt-%{version}
