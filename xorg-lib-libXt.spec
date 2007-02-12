@@ -1,5 +1,5 @@
 Summary:	X Toolkit library
-Summary(pl.UTF-8):   Biblioteka X Toolkit
+Summary(pl.UTF-8):	Biblioteka X Toolkit
 Name:		xorg-lib-libXt
 Version:	1.0.5
 Release:	2
@@ -27,7 +27,7 @@ Biblioteka X Toolkit.
 
 %package devel
 Summary:	Header files for libXt library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libXt
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libXt
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libSM-devel
@@ -48,7 +48,7 @@ używających biblioteki libXt.
 
 %package static
 Summary:	Static libXt library
-Summary(pl.UTF-8):   Biblioteka statyczna libXt
+Summary(pl.UTF-8):	Biblioteka statyczna libXt
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXt-static
