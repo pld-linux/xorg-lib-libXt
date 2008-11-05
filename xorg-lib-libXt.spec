@@ -2,7 +2,7 @@ Summary:	X Toolkit library
 Summary(pl.UTF-8):	Biblioteka X Toolkit
 Name:		xorg-lib-libXt
 Version:	1.0.5
-Release:	2
+Release:	3
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXt-%{version}.tar.bz2
