@@ -1,5 +1,5 @@
-Summary:	X Toolkit library
-Summary(pl.UTF-8):	Biblioteka X Toolkit
+Summary:	X Toolkit Intrinsics library
+Summary(pl.UTF-8):	Biblioteka X Toolkit Intrinsics
 Name:		xorg-lib-libXt
 Version:	1.0.6
 Release:	1
@@ -15,15 +15,17 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
-BuildRequires:	xorg-util-util-macros >= 0.99.2
+BuildRequires:	xorg-proto-kbproto-devel
+BuildRequires:	xorg-proto-xproto-devel
+BuildRequires:	xorg-util-util-macros >= 1.2
 Obsoletes:	libXt
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-X Toolkit library.
+X Toolkit Intrinsics library.
 
 %description -l pl.UTF-8
-Biblioteka X Toolkit.
+Biblioteka X Toolkit Intrinsics.
 
 %package devel
 Summary:	Header files for libXt library
@@ -35,13 +37,13 @@ Requires:	xorg-lib-libX11-devel
 Obsoletes:	libXt-devel
 
 %description devel
-X Toolkit library.
+X Toolkit Intrinsics library.
 
 This package contains the header files needed to develop programs that
 use libXt.
 
 %description devel -l pl.UTF-8
-Biblioteka X Toolkit.
+Biblioteka X Toolkit Intrinsics.
 
 Pakiet zawiera pliki nagłówkowe niezbędne do kompilowania programów
 używających biblioteki libXt.
@@ -54,12 +56,12 @@ Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXt-static
 
 %description static
-X Toolkit library.
+X Toolkit Intrinsics library.
 
 This package contains the static libXt library.
 
 %description static -l pl.UTF-8
-Biblioteka X Toolkit.
+Biblioteka X Toolkit Intrinsics.
 
 Pakiet zawiera statyczną bibliotekę libXt.
 
@@ -93,8 +95,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog
+%doc COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/libXt.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libXt.so.6
 %dir %{_datadir}/X11/app-defaults
 %lang(cs) %{_datadir}/X11/cs
 %lang(da) %{_datadir}/X11/da
@@ -128,7 +131,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/X11/*.h
 %{_pkgconfigdir}/xt.pc
 %{_mandir}/man1/makestrs.1x*
-%{_mandir}/man3/*.3x*
+%{_mandir}/man3/MenuPop*.3x*
+%{_mandir}/man3/Xt*.3x*
 
 %files static
 %defattr(644,root,root,755)
