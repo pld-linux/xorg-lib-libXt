@@ -17,7 +17,7 @@ BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xproto-devel
-BuildRequires:	xorg-util-util-macros >= 1.2
+BuildRequires:	xorg-util-util-macros >= 1.3
 Obsoletes:	libXt
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
