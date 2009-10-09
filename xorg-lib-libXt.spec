@@ -1,12 +1,12 @@
 Summary:	X Toolkit Intrinsics library
 Summary(pl.UTF-8):	Biblioteka X Toolkit Intrinsics
 Name:		xorg-lib-libXt
-Version:	1.0.6
+Version:	1.0.7
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXt-%{version}.tar.bz2
-# Source0-md5:	953930ddf9fdaa1405732c7f01e9e599
+# Source0-md5:	96f3c93434a93186d178b60d4a262496
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
