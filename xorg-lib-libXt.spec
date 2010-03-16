@@ -1,12 +1,12 @@
 Summary:	X Toolkit Intrinsics library
 Summary(pl.UTF-8):	Biblioteka X Toolkit Intrinsics
 Name:		xorg-lib-libXt
-Version:	1.0.7
-Release:	2
+Version:	1.0.8
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXt-%{version}.tar.bz2
-# Source0-md5:	96f3c93434a93186d178b60d4a262496
+# Source0-md5:	fb7d2aa5b24cd5fe9b238a26d88030e7
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -125,12 +125,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/makestrs
 %attr(755,root,root) %{_libdir}/libXt.so
 %{_libdir}/libXt.la
 %{_includedir}/X11/*.h
 %{_pkgconfigdir}/xt.pc
-%{_mandir}/man1/makestrs.1x*
 %{_mandir}/man3/MenuPop*.3x*
 %{_mandir}/man3/Xt*.3x*
 
