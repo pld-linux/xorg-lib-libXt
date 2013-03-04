@@ -1,8 +1,11 @@
+# TODO:
+# - package (or clean) xml/html docs to -apidocs
+#   /usr/share/doc/libXt/*
 Summary:	X Toolkit Intrinsics library
 Summary(pl.UTF-8):	Biblioteka X Toolkit Intrinsics
 Name:		xorg-lib-libXt
 Version:	1.1.3
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXt-%{version}.tar.bz2
@@ -11,6 +14,7 @@ URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	cpp
+BuildRequires:	sed >= 4.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xmlto >= 0.0.20
@@ -81,12 +85,14 @@ Pakiet zawiera statyczną bibliotekę libXt.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_datadir}/X11/app-defaults
 install -d $RPM_BUILD_ROOT%{_datadir}/X11/{cs,da,de,es,es_AR,eu,fr,hu,it,ja,ko,mg,nb,nl,oc,pl,pt,pt_BR,ru,sk,sv,zh_CN,zh_TW}/app-defaults
+
+# there's no man3x in pld
+grep -rl man3x $RPM_BUILD_ROOT%{_mandir}/man3/* | xargs %{__sed} -i -e 's,man3x,man3,'
 
 %clean
 rm -rf $RPM_BUILD_ROOT
