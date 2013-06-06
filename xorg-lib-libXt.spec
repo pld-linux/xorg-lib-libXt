@@ -17,6 +17,7 @@ BuildRequires:	cpp
 BuildRequires:	sed >= 4.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	sed >= 4.0
 BuildRequires:	xmlto >= 0.0.20
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
@@ -74,13 +75,17 @@ Pakiet zawiera statyczną bibliotekę libXt.
 %prep
 %setup -q -n libXt-%{version}
 
+# support __libmansuffix__ with "x" suffix (per FHS 2.3)
+%{__sed} -i -e 's,\.so man__libmansuffix__/,.so man3/,' man/*.man
+
 %build
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--without-fop
 %{__make}
 
 %install
@@ -90,9 +95,6 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_datadir}/X11/app-defaults
 install -d $RPM_BUILD_ROOT%{_datadir}/X11/{cs,da,de,es,es_AR,eu,fr,hu,it,ja,ko,mg,nb,nl,oc,pl,pt,pt_BR,ru,sk,sv,zh_CN,zh_TW}/app-defaults
-
-# there's no man3x in pld
-grep -rl man3x $RPM_BUILD_ROOT%{_mandir}/man3/* | xargs %{__sed} -i -e 's,man3x,man3,'
 
 %clean
 rm -rf $RPM_BUILD_ROOT
