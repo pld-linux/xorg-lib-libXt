@@ -139,8 +139,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libXt.la
 %{_includedir}/X11/*.h
 %{_pkgconfigdir}/xt.pc
-%{_mandir}/man3/MenuPop*.3x*
-%{_mandir}/man3/Xt*.3x*
+%{_mandir}/man3/MenuPop*.3*
+%{_mandir}/man3/Xt*.3*
 
 %files static
 %defattr(644,root,root,755)
