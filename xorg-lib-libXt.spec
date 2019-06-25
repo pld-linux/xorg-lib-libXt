@@ -1,21 +1,20 @@
-# TODO:
-# - package (or clean) xml/html docs to -apidocs
-#   /usr/share/doc/libXt/*
 Summary:	X Toolkit Intrinsics library
 Summary(pl.UTF-8):	Biblioteka X Toolkit Intrinsics
 Name:		xorg-lib-libXt
-Version:	1.1.5
+Version:	1.2.0
 Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXt-%{version}.tar.bz2
-# Source0-md5:	8f5b5576fbabba29a05f3ca2226f74d3
-URL:		http://xorg.freedesktop.org/
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXt-%{version}.tar.bz2
+# Source0-md5:	a9019421d3ee8b4937b6afd9025f018a
+URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	cpp
 BuildRequires:	sed >= 4.0
 BuildRequires:	libtool
+BuildRequires:	libxslt-progs
+BuildRequires:	perl-base
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
 BuildRequires:	xmlto >= 0.0.20
@@ -107,7 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog README
+%doc COPYING ChangeLog README.md
 %attr(755,root,root) %{_libdir}/libXt.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libXt.so.6
 %dir %{_datadir}/X11/app-defaults
@@ -140,7 +139,29 @@ rm -rf $RPM_BUILD_ROOT
 %doc specs/intrinsics.html
 %attr(755,root,root) %{_libdir}/libXt.so
 %{_libdir}/libXt.la
-%{_includedir}/X11/*.h
+%{_includedir}/X11/CallbackI.h
+%{_includedir}/X11/Composite*.h
+%{_includedir}/X11/Constrain*.h
+%{_includedir}/X11/ConvertI.h
+%{_includedir}/X11/Core*.h
+%{_includedir}/X11/CreateI.h
+%{_includedir}/X11/EventI.h
+%{_includedir}/X11/HookObjI.h
+%{_includedir}/X11/InitialI.h
+%{_includedir}/X11/Intrinsic*.h
+%{_includedir}/X11/Object*.h
+%{_includedir}/X11/PassivGraI.h
+%{_includedir}/X11/RectObj*.h
+%{_includedir}/X11/ResConfigP.h
+%{_includedir}/X11/ResourceI.h
+%{_includedir}/X11/SelectionI.h
+%{_includedir}/X11/Shell*.h
+%{_includedir}/X11/StringDefs.h
+%{_includedir}/X11/ThreadsI.h
+%{_includedir}/X11/TranslateI.h
+%{_includedir}/X11/VarargsI.h
+%{_includedir}/X11/Vendor*.h
+%{_includedir}/X11/Xtos.h
 %{_pkgconfigdir}/xt.pc
 %{_mandir}/man3/MenuPop*.3*
 %{_mandir}/man3/Xt*.3*
