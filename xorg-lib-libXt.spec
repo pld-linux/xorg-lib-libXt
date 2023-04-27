@@ -1,30 +1,33 @@
 Summary:	X Toolkit Intrinsics library
 Summary(pl.UTF-8):	Biblioteka X Toolkit Intrinsics
 Name:		xorg-lib-libXt
-Version:	1.2.1
+Version:	1.3.0
 Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXt-%{version}.tar.bz2
-# Source0-md5:	b122ff9a7ec70c94dbbfd814899fffa5
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXt-%{version}.tar.xz
+# Source0-md5:	4ea21d3b5a36d93a2177d9abed2e54d4
 URL:		https://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.60
+BuildRequires:	autoconf >= 2.70
 BuildRequires:	automake
 BuildRequires:	cpp
 BuildRequires:	sed >= 4.0
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	libxslt-progs
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xmlto >= 0.0.20
+BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xproto-devel
 BuildRequires:	xorg-sgml-doctools >= 1.1
-BuildRequires:	xorg-util-util-macros >= 1.13
-Obsoletes:	libXt
+BuildRequires:	xorg-util-util-macros >= 1.16
+BuildRequires:	xz
+Obsoletes:	libXt < 0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,7 +43,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libSM-devel
 Requires:	xorg-lib-libX11-devel
-Obsoletes:	libXt-devel
+Obsoletes:	libXt-devel < 0.2
 
 %description devel
 X Toolkit Intrinsics library.
@@ -59,7 +62,7 @@ Summary:	Static libXt library
 Summary(pl.UTF-8):	Biblioteka statyczna libXt
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
-Obsoletes:	libXt-static
+Obsoletes:	libXt-static < 0.2
 
 %description static
 X Toolkit Intrinsics library.
@@ -89,6 +92,7 @@ Pakiet zawiera statyczną bibliotekę libXt.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
